@@ -72,8 +72,8 @@ try_connect:
 handle_failure:
 	push 0xa2
 	pop eax
-	push 0x0              ; sleep_nanoseconds
-	push 0x5              ; sleep_seconds
+	push 0x0              ; nanoseconds
+	push 0x5              ; seconds(stager_retry_wait)
 	mov ebx, esp
 	xor ecx, ecx
 	int 0x80              ; sys_nanosleep

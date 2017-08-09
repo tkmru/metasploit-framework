@@ -30,8 +30,7 @@ module Payload::Linux::ReverseTcp
       host:              datastore['LHOST'],
       retry_count:       datastore['ReverseConnectRetries'],
       stager_retry_wait: datastore['StagerRetryWait'],
-      sleep_nanoseconds: datastore['SleepNanoseconds'],
-      reliable:    false
+      reliable:          false
     }
 
     # Generate the advanced stager if we have space

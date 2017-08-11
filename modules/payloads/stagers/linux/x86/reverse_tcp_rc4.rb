@@ -27,6 +27,7 @@ module MetasploitModule
       'Platform'      => 'linux',
       'Arch'          => ARCH_X86,
       'Handler'       => Msf::Handler::ReverseTcp,
-      'Stager'        => { 'RequiresMidstager' => true }))
+      'Stager'        => {'RequiresMidstager' => false}
+    ))
   end
 end

@@ -176,6 +176,7 @@ module Msf::Payload::Stager
         end
       end
 
+      puts self.method(:generate_stage).source_location
       p = generate_stage(opts)
 
       # Encode the stage if stage encoding is enabled
@@ -322,4 +323,3 @@ module Msf::Payload::Stager
   attr_accessor :stage_prefix
 
 end
-

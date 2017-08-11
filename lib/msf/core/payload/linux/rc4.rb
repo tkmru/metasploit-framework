@@ -83,6 +83,14 @@ module Payload::Linux::Rc4
     [ p.length ^ xorkey.unpack('V')[0] ].pack('V') + p
   end
 
+  begin
+    blob = self.generate_stage()
+
+  rescue NoMethodError
+    print("Staging failed. This can occur when stageless listeners are used with staged payloads.")
+  end
+
+
   def handle_intermediate_stage(_conn, _payload)
     false
   end
